@@ -78,6 +78,10 @@
     <Compile Include="RezervisiMe.API\Infrastructure\JsonFileStore.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\JsonSettings.cs" />
     <Compile Include="RezervisiMe.API\Models\Accommodation.cs" />
+    <Compile Include="RezervisiMe.API\Models\Dto\AccommodationDto.cs" />
+    <Compile Include="RezervisiMe.API\Models\Dto\ReservationDto.cs" />
+    <Compile Include="RezervisiMe.API\Models\Dto\ReviewDto.cs" />
+    <Compile Include="RezervisiMe.API\Models\Dto\UserDto.cs" />
     <Compile Include="RezervisiMe.API\Models\EntityBase.cs" />
     <Compile Include="RezervisiMe.API\Models\Enums.cs" />
     <Compile Include="RezervisiMe.API\Models\Reservation.cs" />
@@ -89,6 +93,8 @@
     <Compile Include="RezervisiMe.API\Repositories\Interfaces\IReservationRepository.cs" />
     <Compile Include="RezervisiMe.API\Repositories\Interfaces\IReviewRepository.cs" />
     <Compile Include="RezervisiMe.API\Repositories\Interfaces\IUserRepository.cs" />
+    <Compile Include="RezervisiMe.API\Repositories\ReservationRepository.cs" />
+    <Compile Include="RezervisiMe.API\Repositories\ReviewRepository.cs" />
     <Compile Include="RezervisiMe.API\Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

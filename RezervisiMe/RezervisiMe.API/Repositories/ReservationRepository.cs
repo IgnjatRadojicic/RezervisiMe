@@ -1,9 +1,9 @@
-﻿// Repositories/ReservationRepository.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using RezervisiMe.RezervisiMe.API.Infrastructure;
 using RezervisiMe.RezervisiMe.API.Models;
+using RezervisiMe.RezervisiMe.API.Repositories.Interfaces;
 
 namespace RezervisiMe.RezervisiMe.API.Repositories
 {
@@ -23,26 +23,24 @@ namespace RezervisiMe.RezervisiMe.API.Repositories
         public bool Update(Reservation entity) => _store.Update(entity);
         public bool SoftDelete(Guid id) => _store.SoftDelete(id);
 
+
         public IEnumerable<Reservation> GetByGuest(Guid guestId)
         {
-            return _store.GetAll().Where(r => r.GuestId == guestId);
+            return _store.GetAll().Where(g => g.GuestId == guestId);
         }
 
         public IEnumerable<Reservation> GetByAccommodation(Guid accommodationId)
         {
-            return _store.GetAll().Where(r => r.AccommodationId == accommodationId);
+            return _store.GetAll().Where(g => g.AccommodationId == accommodationId);
         }
 
-        public IEnumerable<Reservation> GetOverlappingApproved(Guid accommodationId, DateTime from, DateTime to)
+        public IEnumerable<Reservation> GetOverlappingApproved(Guid accomodationid, DateTime from, DateTime to)
         {
-            // Klasična formula za overlap dva intervala [a1, a2) i [b1, b2):
-            //   a1 < b2  AND  a2 > b1
-            // Samo ODOBRENA rezervacije blokiraju nove (spec eksplicitno).
             return _store.GetAll().Where(r =>
-                r.AccommodationId == accommodationId &&
-                r.Status == ReservationStatus.ODOBRENA &&
-                r.CheckIn < to &&
-                r.CheckOut > from);
+            r.AccommodationId == accomodationid &&
+            r.Status == ReservationStatus.ODOBRENA &&
+            r.CheckIn < to &&
+            r.CheckOut > from);
         }
     }
 }

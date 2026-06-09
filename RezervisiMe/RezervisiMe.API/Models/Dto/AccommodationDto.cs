@@ -1,12 +1,17 @@
 ﻿using Newtonsoft.Json;
 using RezervisiMe.RezervisiMe.API.Infrastructure;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace RezervisiMe.RezervisiMe.API.Models
+namespace RezervisiMe.RezervisiMe.API.Models.Dto
 {
-    public class Accommodation : EntityBase
+    public class AccommodationDto
     {
+        public Guid Id { get; set; }
         public Guid HostId { get; set; }
+        public string HostUsername { get; set; }
         public string Name { get; set; }
         public AccommodationType Type { get; set; }
         public string Description { get; set; }
@@ -21,5 +26,8 @@ namespace RezervisiMe.RezervisiMe.API.Models
         public DateTime PostedAt { get; set; } = DateTime.UtcNow;
 
         public bool IsAvailable { get; set; } = true;
+
+        public double? AverageRating { get; set; }
+        public int ApprovedReviewsCount { get; set; }
     }
 }
