@@ -14,6 +14,7 @@ namespace RezervisiMe
 
         protected void Application_Start()
         {
+            AdminBootstrapper.SeedAdminsFromFile();
             var test = Composition.Users.Add(new RezervisiMe.API.Models.User
             {
                 UserName = "test-" + System.Guid.NewGuid().ToString("N").Substring(0, 6),
