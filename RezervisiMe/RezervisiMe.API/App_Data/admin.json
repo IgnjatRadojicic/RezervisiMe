@@ -1,0 +1,11 @@
+﻿[
+	{
+		"Username": "admin",
+		"Password": "Admin123!",
+		"FirstName": "Glavni",
+		"LastName": "Administrator",
+		"Email": "admin@rezervisime.rs",
+		"DateOfBirth": "01/01/1990",
+		"Gender": "Muski"
+	}
+]
