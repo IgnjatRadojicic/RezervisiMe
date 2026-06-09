@@ -16,6 +16,6 @@ namespace RezervisiMe.RezervisiMe.API.Models.Dto
         public string Content { get; set; }
         public int Rating { get; set; }
         public string ImagePath { get; set; }
-        public ReviewStatus Status { get; set; } = ReviewStatus.KREIRANA;
+        public ReviewStatus Status { get; set; }
     }
 }

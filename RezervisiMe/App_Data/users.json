@@ -1,0 +1,28 @@
+[
+  {
+    "UserName": "test-62c392",
+    "PasswordHash": "placeholder",
+    "FirstName": "Test",
+    "LastName": "Korisnik",
+    "Email": "test@test.rs",
+    "DateOfBirth": "15/01/1995",
+    "Gender": "Muski",
+    "Role": "Gost",
+    "Id": "30ab24a1-af5b-4c2f-af12-23c0feba0f06",
+    "CreatedAt": "2026-06-09T15:33:58.7525454Z",
+    "IsDeleted": false
+  },
+  {
+    "UserName": "test-33a79c",
+    "PasswordHash": "placeholder",
+    "FirstName": "Test",
+    "LastName": "Korisnik",
+    "Email": "test@test.rs",
+    "DateOfBirth": "15/01/1995",
+    "Gender": "Muski",
+    "Role": "Gost",
+    "Id": "b5e752c5-0bf0-4410-aa62-c4eeab478f82",
+    "CreatedAt": "2026-06-09T15:35:00.432291Z",
+    "IsDeleted": false
+  }
+]
