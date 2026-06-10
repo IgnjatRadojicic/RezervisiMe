@@ -122,6 +122,7 @@
     <Compile Include="RezervisiMe.API\Models\Dto\UserDto.cs" />
     <Compile Include="RezervisiMe.API\Models\EntityBase.cs" />
     <Compile Include="RezervisiMe.API\Models\Enums.cs" />
+    <Compile Include="RezervisiMe.API\Models\Requests\AccommodationRequest.cs" />
     <Compile Include="RezervisiMe.API\Models\Requests\UserRequests.cs" />
     <Compile Include="RezervisiMe.API\Models\Reservation.cs" />
     <Compile Include="RezervisiMe.API\Models\Review.cs" />
