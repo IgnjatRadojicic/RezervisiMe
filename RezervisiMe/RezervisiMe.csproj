@@ -107,6 +107,7 @@
     <Compile Include="RezervisiMe.API\App_Start\WebApiConfig.cs" />
     <Compile Include="RezervisiMe.API\Auth\AuthorizeRoleAttribute.cs" />
     <Compile Include="RezervisiMe.API\Auth\TokenService.cs" />
+    <Compile Include="RezervisiMe.API\Controllers\AccommodationsController.cs" />
     <Compile Include="RezervisiMe.API\Controllers\AuthController.cs" />
     <Compile Include="RezervisiMe.API\Controllers\UsersController.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\AdminBootstrapper.cs" />
