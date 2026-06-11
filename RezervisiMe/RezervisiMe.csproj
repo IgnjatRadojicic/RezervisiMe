@@ -109,6 +109,8 @@
     <Compile Include="RezervisiMe.API\Auth\TokenService.cs" />
     <Compile Include="RezervisiMe.API\Controllers\AccommodationsController.cs" />
     <Compile Include="RezervisiMe.API\Controllers\AuthController.cs" />
+    <Compile Include="RezervisiMe.API\Controllers\ReservationsController.cs" />
+    <Compile Include="RezervisiMe.API\Controllers\ReviewsController.cs" />
     <Compile Include="RezervisiMe.API\Controllers\UsersController.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\AdminBootstrapper.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\Composition.cs" />
