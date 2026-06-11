@@ -35,4 +35,3 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
             = new ReviewService(Reviews, Reservations, Users);
     }
 }
-}
