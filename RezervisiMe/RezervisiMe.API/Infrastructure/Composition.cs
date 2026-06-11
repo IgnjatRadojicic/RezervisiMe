@@ -1,6 +1,7 @@
 ﻿using RezervisiMe.RezervisiMe.API.Models;
 using RezervisiMe.RezervisiMe.API.Repositories;
 using RezervisiMe.RezervisiMe.API.Repositories.Interfaces;
+using RezervisiMe.RezervisiMe.API.Services;
 
 namespace RezervisiMe.RezervisiMe.API.Infrastructure
 {
@@ -23,5 +24,15 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
             = new ReservationRepository(_reservationStore);
         public static readonly IReviewRepository Reviews
             = new ReviewRepository(_reviewStore);
+
+        public static readonly IUserService UserService
+            = new UserService(Users, Reservations);
+        public static readonly IAccommodationService AccommodationService
+            = new AccommodationService(Accommodations, Reservations, Users, Reviews);
+        public static readonly IReservationService ReservationService
+            = new ReservationService(Reservations, Accommodations, Users);
+        public static readonly IReviewService ReviewService
+            = new ReviewService(Reviews, Reservations, Users);
     }
+}
 }
