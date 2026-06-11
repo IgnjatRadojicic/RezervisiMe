@@ -96,6 +96,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\js\lib\jquery-3.7.1.min.js" />
+    <Content Include="Client\js\lib\leaflet\images\layers-2x.png" />
+    <Content Include="Client\js\lib\leaflet\images\layers.png" />
+    <Content Include="Client\js\lib\leaflet\images\marker-icon-2x.png" />
+    <Content Include="Client\js\lib\leaflet\images\marker-icon.png" />
+    <Content Include="Client\js\lib\leaflet\images\marker-shadow.png" />
+    <Content Include="Client\js\lib\leaflet\leaflet-src.esm.js" />
+    <Content Include="Client\js\lib\leaflet\leaflet-src.js" />
+    <Content Include="Client\js\lib\leaflet\leaflet.css" />
+    <Content Include="Client\js\lib\leaflet\leaflet.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -155,6 +165,9 @@
     <Compile Include="RezervisiMe.API\Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\js\lib\leaflet\leaflet-src.esm.js.map" />
+    <Content Include="Client\js\lib\leaflet\leaflet-src.js.map" />
+    <Content Include="Client\js\lib\leaflet\leaflet.js.map" />
     <None Include="packages.config" />
     <Content Include="RezervisiMe.API\App_Data\admin.json" />
     <None Include="Web.Debug.config">
@@ -164,9 +177,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Client\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
