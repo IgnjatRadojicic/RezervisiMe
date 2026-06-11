@@ -144,6 +144,7 @@
     <Compile Include="RezervisiMe.API\Services\Interfaces\IReviewService.cs" />
     <Compile Include="RezervisiMe.API\Services\Interfaces\IUserService.cs" />
     <Compile Include="RezervisiMe.API\Services\ReservationService.cs" />
+    <Compile Include="RezervisiMe.API\Services\ReviewService.cs" />
     <Compile Include="RezervisiMe.API\Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
