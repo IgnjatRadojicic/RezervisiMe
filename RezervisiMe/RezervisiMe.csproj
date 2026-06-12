@@ -96,16 +96,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Client\js\lib\jquery-3.7.1.min.js" />
+    <EmbeddedResource Include="Client\css\style.css" />
+    <Content Include="Client\assets\logo-top.png" />
+    <Content Include="Client\assets\logo.png" />
+    <Content Include="Client\index.html" />
+    <EmbeddedResource Include="Client\js\api.js" />
+    <EmbeddedResource Include="Client\js\auth.js" />
+    <EmbeddedResource Include="Client\js\lib\jquery-3.7.1.min.js" />
     <Content Include="Client\js\lib\leaflet\images\layers-2x.png" />
     <Content Include="Client\js\lib\leaflet\images\layers.png" />
     <Content Include="Client\js\lib\leaflet\images\marker-icon-2x.png" />
     <Content Include="Client\js\lib\leaflet\images\marker-icon.png" />
     <Content Include="Client\js\lib\leaflet\images\marker-shadow.png" />
-    <Content Include="Client\js\lib\leaflet\leaflet-src.esm.js" />
-    <Content Include="Client\js\lib\leaflet\leaflet-src.js" />
-    <Content Include="Client\js\lib\leaflet\leaflet.css" />
-    <Content Include="Client\js\lib\leaflet\leaflet.js" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet-src.esm.js" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet-src.js" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.css" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.js" />
+    <EmbeddedResource Include="Client\js\pages\index.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -165,9 +172,9 @@
     <Compile Include="RezervisiMe.API\Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Client\js\lib\leaflet\leaflet-src.esm.js.map" />
-    <Content Include="Client\js\lib\leaflet\leaflet-src.js.map" />
-    <Content Include="Client\js\lib\leaflet\leaflet.js.map" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet-src.esm.js.map" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet-src.js.map" />
+    <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.js.map" />
     <None Include="packages.config" />
     <Content Include="RezervisiMe.API\App_Data\admin.json" />
     <None Include="Web.Debug.config">

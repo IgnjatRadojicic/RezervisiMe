@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>RezervisiMe — Smeštaj u Srbiji</title>
+    <link rel="stylesheet" href="js/lib/leaflet/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions">
+                <div class="locale">RSD <span class="locale__flag">🇷🇸</span></div>
+                <a href="register.html?role=host" class="btn btn--ghost">Izloži svoju nekretninu</a>
+                <a href="register.html" class="btn btn--outline">Registruj se</a>
+                <a href="login.html" class="btn btn--solid">Prijavi se</a>
+            </div>
+        </div>
+        <nav class="site-tabs" aria-label="Kategorije">
+            <button class="site-tab is-active" type="button">
+                <span class="site-tab__icon" aria-hidden="true">🛏</span>
+                <span>Smeštaji</span>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero__inner">
+            <div class="hero__content">
+                <p class="eyebrow">Domaća platforma</p>
+                <h1 class="hero__title">Pronađi smeštaj<br>svuda u Srbiji.</h1>
+                <p class="hero__subtitle">
+                    Od planinskih vila do gradskih apartmana,
+                    kod proverenih domaćina, sve cene u dinarima.
+                </p>
+            </div>
+            <div class="hero__map" aria-label="Mapa Srbije">
+                <div id="serbia-map"></div>
+                <div class="map-hint" id="map-hint">Otkucaj grad da vidiš lokaciju</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="search-wrap">
+        <form class="search" id="search-form" autocomplete="off">
+            <label class="search__field search__field--lg">
+                <span class="search__label">Gde ideš?</span>
+                <input type="text" id="city-input" name="city" placeholder="Beograd, Zlatibor, Tara…">
+            </label>
+            <label class="search__field">
+                <span class="search__label">Prijava</span>
+                <input type="date" name="checkIn">
+            </label>
+            <label class="search__field">
+                <span class="search__label">Odjava</span>
+                <input type="date" name="checkOut">
+            </label>
+            <label class="search__field search__field--sm">
+                <span class="search__label">Gostiju</span>
+                <input type="number" name="guests" min="1" max="20" value="2">
+            </label>
+            <button type="submit" class="search__submit">Pretraži</button>
+        </form>
+    </div>
+
+    <section class="recommended">
+        <div class="container">
+            <p class="eyebrow eyebrow--dark">Sveže dodato</p>
+            <h2 class="section-title">Preporučeni smeštaji</h2>
+            <div class="cards-grid" id="recommended-grid">
+                <div class="cards-grid__state">Učitavanje…</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container about__inner">
+            <p class="eyebrow eyebrow--dark">O nama</p>
+            <h2 class="section-title">Smeštaj kod domaćih, bez posrednika.</h2>
+            <p class="about__text">
+                RezervisiMe povezuje putnike sa lokalnim domaćinima širom Srbije —
+                od hotela u Beogradu do brvnara na Zlatiboru, od vila u Vojvodini
+                do kuća na Đerdapu. Bez skrivenih troškova, bez konverzija valuta,
+                sve dinari, sve direktno.
+            </p>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div class="site-footer__brand">
+                <div class="footer-logo">
+                    <img src="assets/logo.png" alt="RezervisiMe" class="footer-logo__img">
+                </div>
+                <p>Domaća platforma za smeštaj u Srbiji.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37a4 4 0 1 1-7.75 1.13 4 4 0 0 1 7.75-1.13z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.92 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                    </a>
+                </div>
+            </div>
+            <nav class="site-footer__nav" aria-label="Linkovi">
+                <h4 class="site-footer__heading">Linkovi</h4>
+                <a href="#">O nama</a>
+                <a href="#">Kontakt</a>
+                <a href="#">Pravila korišćenja</a>
+                <a href="#">Privatnost</a>
+            </nav>
+            <div class="site-footer__contact">
+                <h4 class="site-footer__heading">Kontakt</h4>
+                <a href="mailto:info@rezervisi.me">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>info@rezervisi.me</span>
+                </a>
+                <a href="tel:+381111234567">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>+381 11 123 4567</span>
+                </a>
+                <span>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Beograd, Srbija</span>
+                </span>
+            </div>
+        </div>
+        <div class="container site-footer__bottom">© 2026 RezervisiMe — sva prava zadržana.</div>
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/lib/leaflet/leaflet.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/serbia-shape.js"></script>
+    <script src="js/pages/index.js"></script>
+
+</body>
+</html>
