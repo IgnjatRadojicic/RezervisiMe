@@ -1,5 +1,4 @@
-﻿// Infrastructure/JsonSettings.cs
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
@@ -17,7 +16,7 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
                     Formatting = Formatting.Indented,
                     NullValueHandling = NullValueHandling.Include
                 };
-                s.Converters.Add(new StringEnumConverter());   // enum -> string u JSON-u
+                s.Converters.Add(new StringEnumConverter());
                 return s;
             }
         }

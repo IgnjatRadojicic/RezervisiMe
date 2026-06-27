@@ -39,7 +39,7 @@ namespace RezervisiMe.RezervisiMe.API.Models.Requests
         public DateTime? DateOfBirthFrom { get; set; }
         public DateTime? DateOfBirthTo { get; set; }
         public UserRole? Role { get; set; }
-        public string SortBy { get; set; }    // "name" | "dateOfBirth" | "role"
-        public string SortDir { get; set; }   // "asc" | "desc"
+        public string SortBy { get; set; }
+        public string SortDir { get; set; }
     }
 }

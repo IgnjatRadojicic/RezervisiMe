@@ -8,9 +8,9 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
         public bool IsSuccess { get; }
         public bool IsFailure => !IsSuccess;
 
-        private Result(T Value)
+        private Result(T value)
         {
-            Value = Value;
+            Value = value;
             IsSuccess = true;
         }
         private Result(Error error)

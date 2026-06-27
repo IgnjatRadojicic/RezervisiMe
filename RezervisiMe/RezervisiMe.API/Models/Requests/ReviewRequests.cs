@@ -8,7 +8,7 @@ namespace RezervisiMe.RezervisiMe.API.Models.Requests
         public string Title { get; set; }
         public string Content { get; set; }
         public int Rating { get; set; }
-        public string ImagePath { get; set; }   // opciono
+        public string ImagePath { get; set; }
     }
 
     public class UpdateReviewRequest

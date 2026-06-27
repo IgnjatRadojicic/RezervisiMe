@@ -57,12 +57,11 @@ namespace RezervisiMe.RezervisiMe.API.Controllers
                 HostId = current.UserId,
                 SortBy = sortBy,
                 SortDir = sortDir,
-                IsAvailable = isAvailable   // domaćin može da filtrira po dostupnosti
+                IsAvailable = isAvailable
             };
             return Ok(Composition.AccommodationService.Search(c));
         }
 
-        // Slika se uploaduje pre Create/Update, vraća se ime fajla.
         [HttpPost, Route("upload-image")]
         [AuthorizeRole("Domacin", "Administrator")]
         public async Task<IHttpActionResult> UploadImage()

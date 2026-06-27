@@ -1,5 +1,4 @@
-﻿// Auth/AuthorizeRoleAttribute.cs
-using System;
+﻿using System;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -27,8 +26,6 @@ namespace RezervisiMe.RezervisiMe.API.Auth
             var entry = TokenStore.Validate(auth.Parameter);
             if (entry == null) return false;
 
-            // Stavi current user u request properties — kontroleri ga vade
-            // preko Request.GetCurrentUser() ekstenzije.
             actionContext.Request.Properties["CurrentUser"] = entry;
 
             if (_roles.Length == 0) return true;

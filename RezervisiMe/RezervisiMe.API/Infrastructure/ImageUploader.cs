@@ -11,7 +11,7 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
     public static class ImageUploader
     {
         private static readonly string[] AllowedExt = { ".jpg", ".jpeg", ".png", ".webp" };
-        private const long MaxBytes = 5 * 1024 * 1024;   // 5 MB
+        private const long MaxBytes = 5 * 1024 * 1024;
 
         public static async Task<Result<string>> SaveFromRequest(HttpRequestMessage request)
         {
@@ -42,7 +42,7 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
 
                 var fileName = $"{Guid.NewGuid():N}{ext}";
                 File.WriteAllBytes(Path.Combine(root, fileName), bytes);
-                return fileName;   // implicit konverzija u Result<string>
+                return fileName;
             }
 
             return Error.Validation("Nijedan fajl nije primljen");

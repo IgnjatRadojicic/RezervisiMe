@@ -33,7 +33,7 @@ namespace RezervisiMe.RezervisiMe.API.Infrastructure
 
             List<AdminSeed> seeds;
             try { seeds = JsonConvert.DeserializeObject<List<AdminSeed>>(json); }
-            catch (JsonException) { return; }   // pokvaren fajl — preskoči, ne ruši app
+            catch (JsonException) { return; }
 
             if (seeds == null || seeds.Count == 0) return;
 

@@ -17,7 +17,7 @@ namespace RezervisiMe.RezervisiMe.API
                 defaults: new { id = RouteParameter.Optional }
             );
 
-
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
             var json = config.Formatters.JsonFormatter;
             json.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             json.SerializerSettings.Converters.Add(new StringEnumConverter());
