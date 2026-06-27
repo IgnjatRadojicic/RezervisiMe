@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>Prijava — RezervisiMe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions">
+                <div class="locale">RSD <span class="locale__flag">🇷🇸</span></div>
+                <a href="register.html?role=host" class="btn btn--ghost">Izloži svoju nekretninu</a>
+                <a href="register.html" class="btn btn--outline">Registruj se</a>
+                <a href="login.html" class="btn btn--solid">Prijavi se</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="auth">
+        <section class="auth-hero">
+            <div class="auth-hero__inner">
+                <p class="eyebrow">Dobro došao nazad</p>
+                <h1 class="auth-hero__title">Prijavi se</h1>
+            </div>
+        </section>
+
+        <div class="auth-card-wrap">
+            <form class="auth-card" id="login-form" novalidate>
+                <div class="auth-alert is-hidden" id="auth-alert"></div>
+
+                <label class="auth-field">
+                    <span class="auth-field__label">Korisničko ime</span>
+                    <input type="text" name="username" placeholder="npr. marko" autocomplete="username" required>
+                </label>
+
+                <label class="auth-field">
+                    <span class="auth-field__label">Lozinka</span>
+                    <input type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+                </label>
+
+                <button type="submit" class="auth-submit" id="auth-submit">Prijavi se</button>
+
+                <p class="auth-switch">
+                    Nemaš nalog? <a href="register.html">Registruj se</a><br>
+                    ili <a href="register.html?role=host">postani domaćin</a>.
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer--art">
+        <img src="assets/bottom.png" alt="Znamenitosti Srbije" class="footer-art__img">
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/pages/login.js"></script>
+
+</body>
+</html>
