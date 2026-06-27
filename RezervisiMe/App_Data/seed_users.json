@@ -1,0 +1,72 @@
+[
+  {
+    "username": "marko",
+    "password": "test123",
+    "firstName": "Marko",
+    "lastName": "Petrović",
+    "email": "marko@test.rs",
+    "dateOfBirth": "12/03/1985",
+    "gender": "Muski",
+    "role": "Domacin"
+  },
+  {
+    "username": "ana",
+    "password": "test123",
+    "firstName": "Ana",
+    "lastName": "Jovanović",
+    "email": "ana@test.rs",
+    "dateOfBirth": "07/09/1990",
+    "gender": "Zenski",
+    "role": "Domacin"
+  },
+  {
+    "username": "stefan",
+    "password": "test123",
+    "firstName": "Stefan",
+    "lastName": "Nikolić",
+    "email": "stefan@test.rs",
+    "dateOfBirth": "23/11/1982",
+    "gender": "Muski",
+    "role": "Domacin"
+  },
+  {
+    "username": "jovana",
+    "password": "test123",
+    "firstName": "Jovana",
+    "lastName": "Mitrović",
+    "email": "jovana@test.rs",
+    "dateOfBirth": "04/06/1992",
+    "gender": "Zenski",
+    "role": "Domacin"
+  },
+  {
+    "username": "petar",
+    "password": "test123",
+    "firstName": "Petar",
+    "lastName": "Đorđević",
+    "email": "petar@test.rs",
+    "dateOfBirth": "18/02/1995",
+    "gender": "Muski",
+    "role": "Gost"
+  },
+  {
+    "username": "milica",
+    "password": "test123",
+    "firstName": "Milica",
+    "lastName": "Stojanović",
+    "email": "milica@test.rs",
+    "dateOfBirth": "29/08/1998",
+    "gender": "Zenski",
+    "role": "Gost"
+  },
+  {
+    "username": "nikola",
+    "password": "test123",
+    "firstName": "Nikola",
+    "lastName": "Lazarević",
+    "email": "nikola@test.rs",
+    "dateOfBirth": "11/12/1993",
+    "gender": "Muski",
+    "role": "Gost"
+  }
+]

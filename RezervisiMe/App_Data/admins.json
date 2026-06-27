@@ -1,0 +1,11 @@
+[
+  {
+    "username": "admin",
+    "password": "admin123",
+    "firstName": "Admin",
+    "lastName": "RezervisiMe",
+    "email": "admin@rezervisi.me",
+    "dateOfBirth": "01/01/1990",
+    "gender": "Muski"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "guestUsername": "petar",
+    "accommodationName": "Vila Tara",
+    "checkInDaysOffset": -14,
+    "checkOutDaysOffset": -10,
+    "numberOfGuests": 4,
+    "status": "ZAVRSENA"
+  },
+  {
+    "guestUsername": "milica",
+    "accommodationName": "Apartman Beograd Centar",
+    "checkInDaysOffset": -20,
+    "checkOutDaysOffset": -17,
+    "numberOfGuests": 2,
+    "status": "ZAVRSENA"
+  },
+  {
+    "guestUsername": "nikola",
+    "accommodationName": "Vila Kopaonik",
+    "checkInDaysOffset": -30,
+    "checkOutDaysOffset": -25,
+    "numberOfGuests": 8,
+    "status": "ZAVRSENA"
+  },
+  {
+    "guestUsername": "milica",
+    "accommodationName": "Kuća Vrnjačka Banja",
+    "checkInDaysOffset": -8,
+    "checkOutDaysOffset": -3,
+    "numberOfGuests": 5,
+    "status": "ZAVRSENA"
+  },
+  {
+    "guestUsername": "petar",
+    "accommodationName": "Brvnara Zlatibor",
+    "checkInDaysOffset": 14,
+    "checkOutDaysOffset": 18,
+    "numberOfGuests": 3,
+    "status": "ODOBRENA"
+  },
+  {
+    "guestUsername": "milica",
+    "accommodationName": "Vila Palić",
+    "checkInDaysOffset": 20,
+    "checkOutDaysOffset": 25,
+    "numberOfGuests": 6,
+    "status": "ODOBRENA"
+  },
+  {
+    "guestUsername": "petar",
+    "accommodationName": "Apartman Niš",
+    "checkInDaysOffset": 7,
+    "checkOutDaysOffset": 10,
+    "numberOfGuests": 2,
+    "status": "ODOBRENA"
+  },
+  {
+    "guestUsername": "nikola",
+    "accommodationName": "Hostel Beograd",
+    "checkInDaysOffset": 5,
+    "checkOutDaysOffset": 8,
+    "numberOfGuests": 1,
+    "status": "KREIRANA"
+  },
+  {
+    "guestUsername": "nikola",
+    "accommodationName": "Brvnara Đerdap",
+    "checkInDaysOffset": 30,
+    "checkOutDaysOffset": 34,
+    "numberOfGuests": 4,
+    "status": "KREIRANA"
+  },
+  {
+    "guestUsername": "petar",
+    "accommodationName": "Stan Novi Sad",
+    "checkInDaysOffset": -2,
+    "checkOutDaysOffset": 2,
+    "numberOfGuests": 3,
+    "status": "OTKAZANA"
+  }
+]

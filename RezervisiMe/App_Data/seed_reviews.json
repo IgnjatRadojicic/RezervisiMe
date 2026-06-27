@@ -1,0 +1,56 @@
+[
+  {
+    "reviewerUsername": "petar",
+    "accommodationName": "Vila Tara",
+    "title": "Savršen odmor na Tari",
+    "content": "Vila je predivna, pogled na kanjon Drine je neverovatan. Domaćin Marko je bio izuzetno ljubazan. Sve preporuke!",
+    "rating": 5,
+    "status": "ODOBRENA",
+    "postedAtDaysAgo": 9
+  },
+  {
+    "reviewerUsername": "milica",
+    "accommodationName": "Apartman Beograd Centar",
+    "title": "Odlična lokacija",
+    "content": "Apartman je čist i moderan, na dva minuta od Knez Mihailove. Parking je bio velika prednost. Malo bučno uveče.",
+    "rating": 4,
+    "status": "ODOBRENA",
+    "postedAtDaysAgo": 15
+  },
+  {
+    "reviewerUsername": "nikola",
+    "accommodationName": "Vila Kopaonik",
+    "title": "Ski-in/ski-out kako treba",
+    "content": "Direktno na stazi, jacuzzi posle skijanja je vrh. Bili smo sa osam ljudi i svi su oduševljeni.",
+    "rating": 5,
+    "status": "ODOBRENA",
+    "postedAtDaysAgo": 22
+  },
+  {
+    "reviewerUsername": "milica",
+    "accommodationName": "Kuća Vrnjačka Banja",
+    "title": "Solidno, ali može bolje",
+    "content": "Kuća je u redu i bašta je lepa, ali kupatilo bi moglo da se renovira. Lokacija blizu izvora je plus.",
+    "rating": 3,
+    "status": "KREIRANA",
+    "postedAtDaysAgo": 2
+  },
+  {
+    "reviewerUsername": "petar",
+    "accommodationName": "Vila Tara",
+    "title": "Drugi put i opet odlično",
+    "content": "Vratili smo se posle prošlog boravka i sve je i dalje na visokom nivou. Toplo preporučujem.",
+    "rating": 5,
+    "status": "KREIRANA",
+    "postedAtDaysAgo": 1
+  },
+  {
+    "reviewerUsername": "nikola",
+    "accommodationName": "Vila Kopaonik",
+    "title": "Razočaran",
+    "content": "Nije bilo tople vode prvo veče i niko se nije javljao na telefon.",
+    "rating": 1,
+    "status": "ODBIJENA",
+    "postedAtDaysAgo": 20
+  }
+]
