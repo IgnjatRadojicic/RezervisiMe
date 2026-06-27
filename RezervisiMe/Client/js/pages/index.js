@@ -2,6 +2,13 @@ $(function () {
     initMap();
     loadRecommended();
     initSearchSubmit();
+    rangePicker.attach({
+        field: '#dates-field',
+        display: '#dates-display',
+        checkIn: '#check-in',
+        checkOut: '#check-out',
+        anchor: '.search-wrap'
+    });
 });
 
 var CITY_ZOOM = 9;
@@ -10,6 +17,7 @@ var CITIES = {
     'Beograd': [44.7866, 20.4489],
     'Novi Sad': [45.2671, 19.8335],
     'Niš': [43.3209, 21.8954],
+    'Vršac': [45.1167, 21.3036],
     'Kragujevac': [44.0142, 20.9239],
     'Subotica': [46.1005, 19.6675],
     'Pančevo': [44.8704, 20.6402],
@@ -182,7 +190,7 @@ function renderCards(items) {
             '<div class="card__meta">' + esc(a.city) + ' · ' + esc(a.type) + '</div>' +
             '<div class="card__footer">' +
             '<div>' +
-            '<span class="card__price">' + formatPrice(a.pricePerNight) + ' RSD</span>' +
+            '<span class="card__price">' + util.formatPrice(a.pricePerNight) + ' RSD</span>' +
             '<span class="card__price-unit"> / noć</span>' +
             '</div>' +
             '<div class="card__rating ' + ratingClass + '">' + rating + '</div>' +
@@ -194,11 +202,6 @@ function renderCards(items) {
     });
 }
 
-function formatPrice(n) {
-    if (n == null) return '';
-    return Math.round(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-}
-
 function initSearchSubmit() {
     $('#search-form').on('submit', function (e) {
         e.preventDefault();
@@ -207,6 +210,6 @@ function initSearchSubmit() {
             if (kv.value) params[kv.name] = kv.value;
         });
         var qs = $.param(params);
-        location.href = 'search.html' + (qs ? '?' + qs : '');
+        location.href = 'accommodations.html' + (qs ? '?' + qs : '');
     });
 }
