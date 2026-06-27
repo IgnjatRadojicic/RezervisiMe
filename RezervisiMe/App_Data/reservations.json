@@ -1,1 +1,122 @@
-[]
+[
+  {
+    "GuestId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "AccommodationId": "d2ee751b-f447-4054-97ae-9410def3647e",
+    "CheckIn": "29/05/2026",
+    "CheckOut": "02/06/2026",
+    "NumberOfGuests": 4,
+    "TotalPrice": 34000.0,
+    "Status": "ZAVRSENA",
+    "Id": "a6cd1392-1a1f-444c-b5ba-2ab85edaa316",
+    "CreatedAt": "2026-05-24T07:15:26.8621863Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "dee83ef1-ced6-4b35-aeea-5b136c0d6c6b",
+    "AccommodationId": "1f77fd6a-f2b6-4eee-a4bc-199ef7457972",
+    "CheckIn": "23/05/2026",
+    "CheckOut": "26/05/2026",
+    "NumberOfGuests": 2,
+    "TotalPrice": 18000.0,
+    "Status": "ZAVRSENA",
+    "Id": "deee2aa1-e80f-4da3-89ed-65493013dd95",
+    "CreatedAt": "2026-05-18T07:15:26.8702123Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "c82e2292-2957-4524-b803-5240ecb62214",
+    "AccommodationId": "f28aef1e-04c3-4509-928a-c87556c7fffc",
+    "CheckIn": "13/05/2026",
+    "CheckOut": "18/05/2026",
+    "NumberOfGuests": 8,
+    "TotalPrice": 60000.0,
+    "Status": "ZAVRSENA",
+    "Id": "0e965d7d-c4f6-4f06-b57b-7f68b970d97e",
+    "CreatedAt": "2026-05-08T07:15:26.874165Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "dee83ef1-ced6-4b35-aeea-5b136c0d6c6b",
+    "AccommodationId": "a7c4683c-cd22-4f6e-9a74-c1248c86628e",
+    "CheckIn": "04/06/2026",
+    "CheckOut": "09/06/2026",
+    "NumberOfGuests": 5,
+    "TotalPrice": 35000.0,
+    "Status": "ZAVRSENA",
+    "Id": "04d2dcbd-fa16-4ae0-b91c-08546a4f2985",
+    "CreatedAt": "2026-05-30T07:15:26.8771769Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "AccommodationId": "234d0677-a424-4eaf-a6fc-598718cdae1c",
+    "CheckIn": "26/06/2026",
+    "CheckOut": "30/06/2026",
+    "NumberOfGuests": 3,
+    "TotalPrice": 30000.0,
+    "Status": "ODOBRENA",
+    "Id": "67c22f40-7a95-424b-b09c-68f26b41df86",
+    "CreatedAt": "2026-06-07T07:15:26.8791616Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "dee83ef1-ced6-4b35-aeea-5b136c0d6c6b",
+    "AccommodationId": "013d40f6-f01c-4350-a33d-d495538b132c",
+    "CheckIn": "02/07/2026",
+    "CheckOut": "07/07/2026",
+    "NumberOfGuests": 6,
+    "TotalPrice": 47500.0,
+    "Status": "ODOBRENA",
+    "Id": "a61fcd81-3d88-4805-92ff-a9b609798912",
+    "CreatedAt": "2026-06-07T07:15:26.8811453Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "AccommodationId": "0b7f79f2-8609-4996-bd8c-3590eb06096e",
+    "CheckIn": "19/06/2026",
+    "CheckOut": "22/06/2026",
+    "NumberOfGuests": 2,
+    "TotalPrice": 13500.0,
+    "Status": "ODOBRENA",
+    "Id": "4bf03858-7c3c-422f-91b1-69c820efc319",
+    "CreatedAt": "2026-06-07T07:15:26.8831428Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "c82e2292-2957-4524-b803-5240ecb62214",
+    "AccommodationId": "703a8fe7-751d-4e50-9aac-add8f17350de",
+    "CheckIn": "17/06/2026",
+    "CheckOut": "20/06/2026",
+    "NumberOfGuests": 1,
+    "TotalPrice": 7500.0,
+    "Status": "KREIRANA",
+    "Id": "5ba95c21-9d59-42dd-8711-983051ca2648",
+    "CreatedAt": "2026-06-07T07:15:26.8858667Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "c82e2292-2957-4524-b803-5240ecb62214",
+    "AccommodationId": "67d25df1-b3d3-4830-b753-6be5cd0405c4",
+    "CheckIn": "12/07/2026",
+    "CheckOut": "16/07/2026",
+    "NumberOfGuests": 4,
+    "TotalPrice": 32000.0,
+    "Status": "KREIRANA",
+    "Id": "36ca6d07-7a6a-4858-b785-0a2b7bb1d46d",
+    "CreatedAt": "2026-06-07T07:15:26.8879861Z",
+    "IsDeleted": false
+  },
+  {
+    "GuestId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "AccommodationId": "5d743560-3fbd-48f3-b459-e2d046b20f1b",
+    "CheckIn": "10/06/2026",
+    "CheckOut": "14/06/2026",
+    "NumberOfGuests": 3,
+    "TotalPrice": 22000.0,
+    "Status": "OTKAZANA",
+    "Id": "f801026b-3b0a-4e72-abcb-c01ec1d236d4",
+    "CreatedAt": "2026-06-05T07:15:26.8899922Z",
+    "IsDeleted": false
+  }
+]

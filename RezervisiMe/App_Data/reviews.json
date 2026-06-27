@@ -1,1 +1,74 @@
-[]
+[
+  {
+    "AccommodationId": "d2ee751b-f447-4054-97ae-9410def3647e",
+    "ReviewerId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "Title": "Savršen odmor na Tari",
+    "Content": "Vila je predivna, pogled na kanjon Drine je neverovatan. Domaćin Marko je bio izuzetno ljubazan. Sve preporuke!",
+    "Rating": 5,
+    "ImagePath": null,
+    "Status": "ODOBRENA",
+    "Id": "d8c231ab-1c85-41c6-acfc-86e0b4c4a084",
+    "CreatedAt": "2026-06-03T07:15:26.8950302Z",
+    "IsDeleted": false
+  },
+  {
+    "AccommodationId": "1f77fd6a-f2b6-4eee-a4bc-199ef7457972",
+    "ReviewerId": "dee83ef1-ced6-4b35-aeea-5b136c0d6c6b",
+    "Title": "Odlična lokacija",
+    "Content": "Apartman je čist i moderan, na dva minuta od Knez Mihailove. Parking je bio velika prednost. Malo bučno uveče.",
+    "Rating": 4,
+    "ImagePath": null,
+    "Status": "ODOBRENA",
+    "Id": "6bcc8948-6a95-4ea3-9d6c-dabf5ad3a224",
+    "CreatedAt": "2026-05-28T07:15:26.9008094Z",
+    "IsDeleted": false
+  },
+  {
+    "AccommodationId": "f28aef1e-04c3-4509-928a-c87556c7fffc",
+    "ReviewerId": "c82e2292-2957-4524-b803-5240ecb62214",
+    "Title": "Ski-in/ski-out kako treba",
+    "Content": "Direktno na stazi, jacuzzi posle skijanja je vrh. Bili smo sa osam ljudi i svi su oduševljeni.",
+    "Rating": 5,
+    "ImagePath": null,
+    "Status": "ODOBRENA",
+    "Id": "7a2c0d4f-1f72-46b1-9e1b-834cf1ce0168",
+    "CreatedAt": "2026-05-21T07:15:26.9038063Z",
+    "IsDeleted": false
+  },
+  {
+    "AccommodationId": "a7c4683c-cd22-4f6e-9a74-c1248c86628e",
+    "ReviewerId": "dee83ef1-ced6-4b35-aeea-5b136c0d6c6b",
+    "Title": "Solidno, ali može bolje",
+    "Content": "Kuća je u redu i bašta je lepa, ali kupatilo bi moglo da se renovira. Lokacija blizu izvora je plus.",
+    "Rating": 3,
+    "ImagePath": null,
+    "Status": "KREIRANA",
+    "Id": "fe653b76-963c-4312-a0ab-312e6bd2fc06",
+    "CreatedAt": "2026-06-10T07:15:26.9067504Z",
+    "IsDeleted": false
+  },
+  {
+    "AccommodationId": "d2ee751b-f447-4054-97ae-9410def3647e",
+    "ReviewerId": "31810fb6-894b-4ae4-8cc9-7d60359ef312",
+    "Title": "Drugi put i opet odlično",
+    "Content": "Vratili smo se posle prošlog boravka i sve je i dalje na visokom nivou. Toplo preporučujem.",
+    "Rating": 5,
+    "ImagePath": null,
+    "Status": "KREIRANA",
+    "Id": "ecd18eb7-ef16-483f-82e4-80d32fac746d",
+    "CreatedAt": "2026-06-11T07:15:26.9089449Z",
+    "IsDeleted": false
+  },
+  {
+    "AccommodationId": "f28aef1e-04c3-4509-928a-c87556c7fffc",
+    "ReviewerId": "c82e2292-2957-4524-b803-5240ecb62214",
+    "Title": "Razočaran",
+    "Content": "Nije bilo tople vode prvo veče i niko se nije javljao na telefon.",
+    "Rating": 1,
+    "ImagePath": null,
+    "Status": "ODBIJENA",
+    "Id": "c36fafef-ca72-497b-9298-6447a7391f6f",
+    "CreatedAt": "2026-05-23T07:15:26.9109265Z",
+    "IsDeleted": false
+  }
+]
