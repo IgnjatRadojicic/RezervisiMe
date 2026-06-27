@@ -17,6 +17,13 @@
   <img src="https://img.shields.io/badge/Auth-Custom%20Bearer%20Tokens-orange" alt="Custom Auth" />
 </p>
 
+
+<p align="center">
+<img width="1080" height="608" alt="2026-06-27 22-01-40" src="https://github.com/user-attachments/assets/eddcc8c8-0508-485d-abda-a88730a5ee34" />
+
+</p>
+
+
 ---
 
 ## What is RezervisiMe?
