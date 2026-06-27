@@ -82,6 +82,9 @@
     <Reference Include="System.Web.Http, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.3.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -96,7 +99,40 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Client\css\style.css" />
+    <Content Include="Client\css\base.css" />
+    <Content Include="Client\css\header.css" />
+    <Content Include="Client\css\hero.css" />
+    <Content Include="Client\css\search.css" />
+    <Content Include="Client\css\cards.css" />
+    <Content Include="Client\css\about.css" />
+    <Content Include="Client\css\footer.css" />
+    <Content Include="Client\css\auth.css" />
+    <Content Include="Client\css\animations.css" />
+    <Content Include="Client\css\responsive.css" />
+    <Content Include="Client\css\ui.css" />
+    <Content Include="Client\css\rangepicker.css" />
+    <Content Include="Client\css\accommodations.css" />
+    <Content Include="Client\css\accommodation.css" />
+    <Content Include="Client\css\admin.css" />
+    <Content Include="Client\css\profile.css" />
+    <Content Include="Client\profile.html" />
+    <Content Include="Client\js\pages\profile.js" />
+    <Content Include="Client\login.html" />
+    <Content Include="Client\register.html" />
+    <Content Include="Client\accommodations.html" />
+    <Content Include="Client\accommodation.html" />
+    <Content Include="Client\reservations.html" />
+    <Content Include="Client\admin.html" />
+    <Content Include="Client\js\util.js" />
+    <Content Include="Client\js\rangepicker.js" />
+    <Content Include="Client\js\serbia-shape.js" />
+    <Content Include="Client\js\pages\login.js" />
+    <Content Include="Client\js\pages\register.js" />
+    <Content Include="Client\js\pages\accommodations.js" />
+    <Content Include="Client\js\pages\accommodation.js" />
+    <Content Include="Client\js\pages\reservations.js" />
+    <Content Include="Client\js\pages\admin.js" />
+    <Content Include="Client\assets\bottom.png" />
     <Content Include="Client\assets\logo-top.png" />
     <Content Include="Client\assets\logo.png" />
     <Content Include="Client\index.html" />
@@ -113,7 +149,14 @@
     <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.css" />
     <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.js" />
     <EmbeddedResource Include="Client\js\pages\index.js" />
+    <Content Include="Client\test.html" />
     <Content Include="Global.asax" />
+    <Content Include="Content\uploads\image_1.jpeg" />
+    <Content Include="Content\uploads\image_2.jpg" />
+    <Content Include="Content\uploads\image_4.jpg" />
+    <Content Include="Content\uploads\image_6.jpg" />
+    <Content Include="Content\uploads\image_7.jpg" />
+    <Content Include="Content\uploads\image_8.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +182,7 @@
     <Compile Include="RezervisiMe.API\Infrastructure\PasswordHasher.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\Result.cs" />
     <Compile Include="RezervisiMe.API\Infrastructure\ResultExtensions.cs" />
+    <Compile Include="RezervisiMe.API\Infrastructure\SeedBootstrapper.cs" />
     <Compile Include="RezervisiMe.API\Models\Accommodation.cs" />
     <Compile Include="RezervisiMe.API\Models\Dto\AccommodationDto.cs" />
     <Compile Include="RezervisiMe.API\Models\Dto\ReservationDto.cs" />
@@ -177,6 +221,10 @@
     <EmbeddedResource Include="Client\js\lib\leaflet\leaflet.js.map" />
     <None Include="packages.config" />
     <Content Include="RezervisiMe.API\App_Data\admin.json" />
+    <Content Include="App_Data\seed_accommodations.json" />
+    <Content Include="App_Data\seed_reservations.json" />
+    <Content Include="App_Data\seed_reviews.json" />
+    <Content Include="App_Data\seed_users.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
