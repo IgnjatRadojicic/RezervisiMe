@@ -1,0 +1,17 @@
+.about {
+    background: var(--rs-cream);
+    padding: 80px 0;
+}
+
+.about__inner {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about__text {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--rs-ink);
+    margin: 0;
+}

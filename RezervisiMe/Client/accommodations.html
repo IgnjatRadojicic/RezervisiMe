@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>Smeštaji — RezervisiMe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/rangepicker.css">
+    <link rel="stylesheet" href="css/accommodations.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions">
+                <div class="locale">RSD <span class="locale__flag">🇷🇸</span></div>
+                <a href="register.html?role=host" class="btn btn--ghost">Izloži svoju nekretninu</a>
+                <a href="register.html" class="btn btn--outline">Registruj se</a>
+                <a href="login.html" class="btn btn--solid">Prijavi se</a>
+            </div>
+        </div>
+        <div class="search-band" id="search-band">
+            <form class="search" id="search-form" autocomplete="off">
+                <label class="search__field search__field--lg">
+                    <span class="search__label">Gde ideš?</span>
+                    <input type="text" id="city-input" name="city" placeholder="Beograd, Zlatibor, Tara…">
+                </label>
+                <label class="search__field search__field--dates" id="dates-field">
+                    <span class="search__label">Prijava — Odjava</span>
+                    <input type="text" id="dates-display" placeholder="Izaberi datume" readonly>
+                    <input type="hidden" name="checkIn" id="check-in">
+                    <input type="hidden" name="checkOut" id="check-out">
+                </label>
+                <label class="search__field search__field--sm">
+                    <span class="search__label">Gostiju</span>
+                    <input type="number" id="guests-input" name="guests" min="1" max="20" placeholder="2">
+                </label>
+                <button type="submit" class="search__submit">Pretraži</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="container listing">
+        <aside class="listing__filters" id="filters-panel">
+            <h3 class="filters__title">Filtriraj:</h3>
+
+            <section class="filters__group">
+                <h4 class="filters__heading">Naziv objekta</h4>
+                <label class="form-field">
+                    <input type="text" id="name-filter" placeholder="npr. Vila Panorama">
+                </label>
+            </section>
+
+            <section class="filters__group">
+                <h4 class="filters__heading">Tvoj budžet (po noći)</h4>
+                <div class="filters__budget">
+                    <label class="form-field">
+                        <span class="form-field__label">Od (RSD)</span>
+                        <input type="number" id="price-min" min="0" step="500" placeholder="0">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Do (RSD)</span>
+                        <input type="number" id="price-max" min="0" step="500" placeholder="∞">
+                    </label>
+                </div>
+            </section>
+
+            <section class="filters__group">
+                <h4 class="filters__heading">Tip smeštaja</h4>
+                <div id="type-filters"></div>
+            </section>
+
+            <section class="filters__group">
+                <h4 class="filters__heading">Ocena gostiju</h4>
+                <div id="rating-filters">
+                    <label class="filters__check"><input type="radio" name="minRating" value="" checked><span>Bilo koja</span></label>
+                    <label class="filters__check"><input type="radio" name="minRating" value="4.5"><span>Izuzetna: 4.5+</span></label>
+                    <label class="filters__check"><input type="radio" name="minRating" value="4"><span>Odlična: 4+</span></label>
+                    <label class="filters__check"><input type="radio" name="minRating" value="3"><span>Dobra: 3+</span></label>
+                </div>
+            </section>
+        </aside>
+
+        <section class="listing__results">
+            <div class="page-head">
+                <div>
+                    <h1 class="page-title" id="results-title">Smeštaji</h1>
+                    <div class="page-sub" id="results-sub"></div>
+                </div>
+                <div class="listing__head-actions">
+                    <select id="avail-filter" class="listing__sort is-hidden">
+                        <option value="">Svi statusi</option>
+                        <option value="true">Dostupni</option>
+                        <option value="false">Nedostupni</option>
+                    </select>
+                    <select id="sort-select" class="listing__sort">
+                        <option value="postedAt.desc">Sortiraj: Najnovije prvo</option>
+                        <option value="postedAt.asc">Najstarije prvo</option>
+                        <option value="price.asc">Cena (najniža prvo)</option>
+                        <option value="price.desc">Cena (najviša prvo)</option>
+                        <option value="name.asc">Naziv (A–Š)</option>
+                        <option value="name.desc">Naziv (Š–A)</option>
+                    </select>
+                    <button type="button" id="add-acc-btn" class="btn btn--blue is-hidden">+ Dodaj smeštaj</button>
+                </div>
+            </div>
+            <div id="page-alert" class="page-alert is-hidden"></div>
+            <div id="results" class="results">
+                <div class="empty-state">Učitavanje…</div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-backdrop is-hidden" id="acc-modal">
+        <div class="modal modal--wide">
+            <div class="modal__head">
+                <h2 class="modal__title" id="acc-modal-title">Dodaj smeštaj</h2>
+                <button type="button" class="modal__close" data-close="acc-modal">×</button>
+            </div>
+            <form id="acc-form" novalidate>
+                <div class="page-alert is-hidden" id="acc-alert"></div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Naziv</span>
+                        <input type="text" id="acc-name" required>
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Tip</span>
+                        <select id="acc-type"></select>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Opis</span>
+                    <textarea id="acc-desc"></textarea>
+                </label>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Grad</span>
+                        <input type="text" id="acc-city" required>
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Adresa</span>
+                        <input type="text" id="acc-address" required>
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Cena po noći (RSD)</span>
+                        <input type="number" id="acc-price" min="1" step="1" required>
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Maks. gostiju</span>
+                        <input type="number" id="acc-guests" min="1" max="50" required>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Slika (jpg, png, webp — do 5 MB; obavezna pri kreiranju)</span>
+                    <input type="file" id="acc-image" accept=".jpg,.jpeg,.png,.webp">
+                </label>
+                <label class="form-check is-hidden" id="acc-available-wrap">
+                    <input type="checkbox" id="acc-available" checked>
+                    <span>Dostupan za rezervacije</span>
+                </label>
+                <div class="modal__foot">
+                    <button type="button" class="btn btn--line" data-close="acc-modal">Otkaži</button>
+                    <button type="submit" class="btn btn--blue" id="acc-save">Sačuvaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container site-footer__bottom">© 2026 RezervisiMe — sva prava zadržana.</div>
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/rangepicker.js"></script>
+    <script src="js/pages/accommodations.js"></script>
+
+</body>
+</html>

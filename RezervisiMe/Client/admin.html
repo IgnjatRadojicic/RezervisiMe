@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>Admin panel — RezervisiMe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions"></div>
+        </div>
+    </header>
+
+    <main class="container admin">
+        <div class="page-head">
+            <div>
+                <h1 class="page-title">Admin panel</h1>
+                <div class="page-sub">Upravljanje korisnicima, smeštajima, rezervacijama i recenzijama.</div>
+            </div>
+        </div>
+
+        <div class="tabs" id="admin-tabs">
+            <button type="button" class="tab is-active" data-section="users">Korisnici</button>
+            <button type="button" class="tab" data-section="accs">Smeštaji</button>
+            <button type="button" class="tab" data-section="reservations">Rezervacije</button>
+            <button type="button" class="tab" data-section="reviews">Recenzije</button>
+        </div>
+
+        <div id="page-alert" class="page-alert is-hidden"></div>
+
+        <section class="admin-section" id="section-users">
+            <form class="toolbar" id="users-filter">
+                <input type="text" id="uf-first" placeholder="Ime">
+                <input type="text" id="uf-last" placeholder="Prezime">
+                <select id="uf-role">
+                    <option value="">Sve uloge</option>
+                    <option value="Gost">Gost</option>
+                    <option value="Domacin">Domaćin</option>
+                    <option value="Administrator">Administrator</option>
+                </select>
+                <label class="toolbar__date">Rođen od <input type="date" id="uf-dob-from"></label>
+                <label class="toolbar__date">do <input type="date" id="uf-dob-to"></label>
+                <select id="uf-sort">
+                    <option value="name.asc">Ime (A–Z)</option>
+                    <option value="name.desc">Ime (Z–A)</option>
+                    <option value="dateOfBirth.asc">Datum rođenja ↑</option>
+                    <option value="dateOfBirth.desc">Datum rođenja ↓</option>
+                    <option value="role.asc">Uloga ↑</option>
+                    <option value="role.desc">Uloga ↓</option>
+                </select>
+                <button type="submit" class="btn btn--blue btn--sm">Pretraži</button>
+                <button type="button" class="btn btn--line btn--sm toolbar__right" id="add-host-btn">+ Dodaj domaćina</button>
+            </form>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Korisničko ime</th><th>Ime</th><th>Prezime</th><th>Email</th>
+                            <th>Datum rođenja</th><th>Pol</th><th>Uloga</th><th>Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-body"></tbody>
+                </table>
+            </div>
+            <div class="empty-state is-hidden" id="users-empty"></div>
+        </section>
+
+        <section class="admin-section is-hidden" id="section-accs">
+            <div class="toolbar">
+                <select id="af-avail">
+                    <option value="">Svi statusi</option>
+                    <option value="true">Dostupni</option>
+                    <option value="false">Nedostupni</option>
+                </select>
+                <select id="af-sort">
+                    <option value="name.asc">Naziv (A–Š)</option>
+                    <option value="name.desc">Naziv (Š–A)</option>
+                    <option value="price.asc">Cena (najniža prvo)</option>
+                    <option value="price.desc">Cena (najviša prvo)</option>
+                    <option value="postedAt.desc">Najnovije prvo</option>
+                    <option value="postedAt.asc">Najstarije prvo</option>
+                </select>
+            </div>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Naziv</th><th>Grad</th><th>Tip</th><th>Cena / noć</th>
+                            <th>Maks. gostiju</th><th>Ocena</th><th>Domaćin</th><th>Status</th><th>Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody id="accs-body"></tbody>
+                </table>
+            </div>
+            <div class="empty-state is-hidden" id="accs-empty"></div>
+        </section>
+
+        <section class="admin-section is-hidden" id="section-reservations">
+            <div class="toolbar">
+                <select id="rf-status">
+                    <option value="">Svi statusi</option>
+                    <option value="KREIRANA">Kreirane</option>
+                    <option value="ODOBRENA">Odobrene</option>
+                    <option value="OTKAZANA">Otkazane</option>
+                    <option value="ZAVRSENA">Završene</option>
+                </select>
+            </div>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Smeštaj</th><th>Gost</th><th>Prijava</th><th>Odjava</th>
+                            <th>Gostiju</th><th>Ukupno</th><th>Status</th><th>Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-body"></tbody>
+                </table>
+            </div>
+            <div class="empty-state is-hidden" id="reservations-empty"></div>
+        </section>
+
+        <section class="admin-section is-hidden" id="section-reviews">
+            <div class="toolbar">
+                <select id="vf-status">
+                    <option value="">Svi statusi</option>
+                    <option value="KREIRANA">Na čekanju</option>
+                    <option value="ODOBRENA">Odobrene</option>
+                    <option value="ODBIJENA">Odbijene</option>
+                </select>
+            </div>
+            <div class="table-wrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Smeštaj</th><th>Recenzent</th><th>Ocena</th>
+                            <th>Naslov</th><th>Sadržaj</th><th>Status</th><th>Akcije</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviews-body"></tbody>
+                </table>
+            </div>
+            <div class="empty-state is-hidden" id="reviews-empty"></div>
+        </section>
+    </main>
+
+    <div class="modal-backdrop is-hidden" id="user-modal">
+        <div class="modal">
+            <div class="modal__head">
+                <h2 class="modal__title">Izmeni korisnika</h2>
+                <button type="button" class="modal__close" data-close="user-modal">×</button>
+            </div>
+            <form id="user-form" novalidate>
+                <div class="page-alert is-hidden" id="user-alert"></div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Ime</span>
+                        <input type="text" id="u-first">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Prezime</span>
+                        <input type="text" id="u-last">
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Email</span>
+                    <input type="email" id="u-email">
+                </label>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Datum rođenja</span>
+                        <input type="date" id="u-dob">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Pol</span>
+                        <select id="u-gender">
+                            <option value="Muski">Muški</option>
+                            <option value="Zenski">Ženski</option>
+                            <option value="Drugo">Drugo</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Nova lozinka (opciono)</span>
+                    <input type="password" id="u-password" placeholder="Ostavi prazno da ne menjaš">
+                </label>
+                <div class="modal__foot">
+                    <button type="button" class="btn btn--line" data-close="user-modal">Otkaži</button>
+                    <button type="submit" class="btn btn--blue" id="user-save">Sačuvaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="host-modal">
+        <div class="modal">
+            <div class="modal__head">
+                <h2 class="modal__title">Dodaj domaćina</h2>
+                <button type="button" class="modal__close" data-close="host-modal">×</button>
+            </div>
+            <form id="host-form" novalidate>
+                <div class="page-alert is-hidden" id="host-alert"></div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Ime</span>
+                        <input type="text" id="h-first">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Prezime</span>
+                        <input type="text" id="h-last">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Korisničko ime</span>
+                        <input type="text" id="h-username">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Email</span>
+                        <input type="email" id="h-email">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Datum rođenja</span>
+                        <input type="date" id="h-dob">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Pol</span>
+                        <select id="h-gender">
+                            <option value="Muski">Muški</option>
+                            <option value="Zenski">Ženski</option>
+                            <option value="Drugo">Drugo</option>
+                        </select>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Lozinka</span>
+                    <input type="password" id="h-password" placeholder="Najmanje 6 karaktera">
+                </label>
+                <div class="modal__foot">
+                    <button type="button" class="btn btn--line" data-close="host-modal">Otkaži</button>
+                    <button type="submit" class="btn btn--blue" id="host-save">Dodaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-backdrop is-hidden" id="acc-modal">
+        <div class="modal modal--wide">
+            <div class="modal__head">
+                <h2 class="modal__title">Izmeni smeštaj</h2>
+                <button type="button" class="modal__close" data-close="acc-modal">×</button>
+            </div>
+            <form id="acc-form" novalidate>
+                <div class="page-alert is-hidden" id="acc-alert"></div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Naziv</span>
+                        <input type="text" id="acc-name">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Tip</span>
+                        <select id="acc-type"></select>
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Opis</span>
+                    <textarea id="acc-desc"></textarea>
+                </label>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Grad</span>
+                        <input type="text" id="acc-city">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Adresa</span>
+                        <input type="text" id="acc-address">
+                    </label>
+                </div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Cena po noći (RSD)</span>
+                        <input type="number" id="acc-price" min="1" step="1">
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Maks. gostiju</span>
+                        <input type="number" id="acc-guests" min="1" max="50">
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Slika (jpg, png, webp — do 5 MB)</span>
+                    <input type="file" id="acc-image" accept=".jpg,.jpeg,.png,.webp">
+                </label>
+                <label class="form-check">
+                    <input type="checkbox" id="acc-available">
+                    <span>Dostupan za rezervacije</span>
+                </label>
+                <div class="modal__foot">
+                    <button type="button" class="btn btn--line" data-close="acc-modal">Otkaži</button>
+                    <button type="submit" class="btn btn--blue" id="acc-save">Sačuvaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container site-footer__bottom">© 2026 RezervisiMe — sva prava zadržana.</div>
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/pages/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>Smeštaj — RezervisiMe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/rangepicker.css">
+    <link rel="stylesheet" href="css/accommodation.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions">
+                <div class="locale">RSD <span class="locale__flag">🇷🇸</span></div>
+                <a href="register.html?role=host" class="btn btn--ghost">Izloži svoju nekretninu</a>
+                <a href="register.html" class="btn btn--outline">Registruj se</a>
+                <a href="login.html" class="btn btn--solid">Prijavi se</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail">
+        <a class="detail__back" href="accommodations.html">← Nazad na sve smeštaje</a>
+
+        <div id="detail-state" class="empty-state">Učitavanje…</div>
+
+        <div class="detail__grid is-hidden" id="detail">
+            <div class="detail__main">
+                <div class="detail__title-row">
+                    <h1 class="detail__name" id="acc-name"></h1>
+                    <span class="badge badge--type" id="acc-type"></span>
+                    <span class="badge badge--off is-hidden" id="acc-unavailable">Nedostupan</span>
+                </div>
+                <div class="detail__loc" id="acc-loc"></div>
+                <div class="detail__image" id="acc-image"></div>
+                <div class="detail__facts" id="acc-facts"></div>
+
+                <h2 class="detail__h2">Opis</h2>
+                <p class="detail__desc" id="acc-desc"></p>
+
+                <section class="reviews">
+                    <h2 class="detail__h2">Recenzije <span class="reviews__count" id="rev-count"></span></h2>
+                    <div id="reviews-list"></div>
+
+                    <form id="review-form" class="review-form is-hidden" novalidate>
+                        <h3>Ostavi recenziju</h3>
+                        <div id="review-alert" class="page-alert is-hidden"></div>
+                        <div class="form-row">
+                            <label class="form-field">
+                                <span class="form-field__label">Ocena</span>
+                                <select id="review-rating">
+                                    <option value="5">5 — Odlično</option>
+                                    <option value="4">4 — Vrlo dobro</option>
+                                    <option value="3">3 — Dobro</option>
+                                    <option value="2">2 — Loše</option>
+                                    <option value="1">1 — Veoma loše</option>
+                                </select>
+                            </label>
+                            <label class="form-field">
+                                <span class="form-field__label">Naslov</span>
+                                <input type="text" id="review-title" placeholder="npr. Sjajan boravak">
+                            </label>
+                        </div>
+                        <label class="form-field">
+                            <span class="form-field__label">Sadržaj</span>
+                            <textarea id="review-content" placeholder="Kako je bilo?"></textarea>
+                        </label>
+                        <button type="submit" class="btn btn--blue" id="review-submit">Pošalji recenziju</button>
+                    </form>
+                </section>
+            </div>
+
+            <aside class="detail__side">
+                <div class="book-card" id="book-card">
+                    <div class="book-card__top">
+                        <div class="book-card__score" id="acc-score"></div>
+                        <div class="book-card__price"><strong id="acc-price"></strong> RSD <small>/ noć</small></div>
+                    </div>
+                    <form id="book-form" novalidate>
+                        <div id="book-alert" class="page-alert is-hidden"></div>
+                        <label class="form-field" id="book-dates-field">
+                            <span class="form-field__label">Prijava — Odjava</span>
+                            <input type="text" id="book-dates-display" placeholder="Izaberi datume" readonly>
+                            <input type="hidden" id="book-check-in">
+                            <input type="hidden" id="book-check-out">
+                        </label>
+                        <label class="form-field">
+                            <span class="form-field__label">Broj gostiju</span>
+                            <input type="number" id="book-guests" min="1" value="2">
+                        </label>
+                        <div class="book-card__summary is-hidden" id="book-summary"></div>
+                        <button type="submit" class="btn btn--blue book-card__submit" id="book-submit">Rezerviši</button>
+                    </form>
+                    <div class="book-card__note is-hidden" id="book-note"></div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container site-footer__bottom">© 2026 RezervisiMe — sva prava zadržana.</div>
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/rangepicker.js"></script>
+    <script src="js/pages/accommodation.js"></script>
+
+</body>
+</html>

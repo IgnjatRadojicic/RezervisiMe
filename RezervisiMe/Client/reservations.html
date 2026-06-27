@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/Client/">
+    <title>Rezervacije — RezervisiMe</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="index.html" class="site-logo">
+                <img src="assets/logo-top.png" alt="RezervisiMe" class="site-logo__img">
+            </a>
+            <div class="site-header__actions" id="header-actions"></div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 64px; min-height: 60vh;">
+        <div class="page-head">
+            <div>
+                <h1 class="page-title">Rezervacije</h1>
+                <div class="page-sub" id="results-sub"></div>
+            </div>
+        </div>
+
+        <div class="tabs" id="status-tabs">
+            <button type="button" class="tab is-active" data-status="">Sve</button>
+            <button type="button" class="tab" data-status="KREIRANA">Kreirane</button>
+            <button type="button" class="tab" data-status="ODOBRENA">Odobrene</button>
+            <button type="button" class="tab" data-status="OTKAZANA">Otkazane</button>
+            <button type="button" class="tab" data-status="ZAVRSENA">Završene</button>
+        </div>
+
+        <div id="page-alert" class="page-alert is-hidden"></div>
+
+        <div class="table-wrap">
+            <table class="table">
+                <thead>
+                    <tr id="table-head"></tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+        <div id="empty" class="empty-state is-hidden"></div>
+    </main>
+
+    <div class="modal-backdrop is-hidden" id="review-modal">
+        <div class="modal">
+            <div class="modal__head">
+                <h2 class="modal__title">Oceni smeštaj</h2>
+                <button type="button" class="modal__close" data-close="review-modal">×</button>
+            </div>
+            <form id="review-form" novalidate>
+                <div class="page-alert is-hidden" id="review-alert"></div>
+                <div class="form-row">
+                    <label class="form-field">
+                        <span class="form-field__label">Ocena</span>
+                        <select id="review-rating">
+                            <option value="5">5 — Odlično</option>
+                            <option value="4">4 — Vrlo dobro</option>
+                            <option value="3">3 — Dobro</option>
+                            <option value="2">2 — Loše</option>
+                            <option value="1">1 — Veoma loše</option>
+                        </select>
+                    </label>
+                    <label class="form-field">
+                        <span class="form-field__label">Naslov</span>
+                        <input type="text" id="review-title" placeholder="npr. Sjajan boravak">
+                    </label>
+                </div>
+                <label class="form-field">
+                    <span class="form-field__label">Sadržaj</span>
+                    <textarea id="review-content" placeholder="Kako je bilo?"></textarea>
+                </label>
+                <div class="modal__foot">
+                    <button type="button" class="btn btn--line" data-close="review-modal">Otkaži</button>
+                    <button type="submit" class="btn btn--blue" id="review-submit">Pošalji</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container site-footer__bottom">© 2026 RezervisiMe — sva prava zadržana.</div>
+    </footer>
+
+    <script src="js/lib/jquery-3.7.1.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/pages/reservations.js"></script>
+
+</body>
+</html>
