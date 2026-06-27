@@ -1,0 +1,94 @@
+@media (max-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    #serbia-map {
+        height: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header__inner {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .site-header__actions {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .locale {
+        display: none;
+    }
+
+    .btn--ghost {
+        display: none;
+    }
+
+    .search {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search__field--lg {
+        grid-column: 1 / -1;
+    }
+
+    .search__submit {
+        grid-column: 1 / -1;
+        padding: 14px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .site-footer__inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+    }
+
+    .site-footer__nav {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .site-footer__contact {
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 40px 0 110px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search {
+        grid-template-columns: 1fr;
+    }
+
+    .search__field {
+        border-right: 0;
+        border-bottom: 1px solid var(--rs-line);
+    }
+}

@@ -1,0 +1,137 @@
+.rp-anchor {
+    position: relative;
+}
+
+.rp {
+    position: absolute;
+    z-index: 60;
+    background: var(--rs-white);
+    border: 1px solid var(--rs-line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 20px 22px;
+    display: flex;
+    gap: 28px;
+}
+
+    .rp.is-hidden {
+        display: none;
+    }
+
+.rp__nav {
+    position: absolute;
+    top: 18px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--rs-line);
+    background: var(--rs-white);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--rs-ink);
+    transition: background 0.15s var(--ease);
+}
+
+    .rp__nav:hover:not(:disabled) {
+        background: var(--rs-soft);
+    }
+
+    .rp__nav:disabled {
+        opacity: 0.35;
+        cursor: default;
+    }
+
+.rp__nav--prev {
+    left: 16px;
+}
+
+.rp__nav--next {
+    right: 16px;
+}
+
+.rp__month {
+    width: 272px;
+}
+
+.rp__month-name {
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.rp__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.rp__wd {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--rs-muted);
+    text-align: center;
+    padding: 4px 0 6px;
+    text-transform: uppercase;
+}
+
+.rp__day {
+    height: 36px;
+    border: 0;
+    background: transparent;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--rs-ink);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0;
+}
+
+    .rp__day:hover:not(.is-disabled):not(.is-empty) {
+        outline: 1.5px solid var(--rs-blue);
+        outline-offset: -1.5px;
+    }
+
+    .rp__day.is-empty {
+        cursor: default;
+    }
+
+    .rp__day.is-disabled {
+        color: #C9C9C9;
+        cursor: default;
+    }
+
+    .rp__day.is-between {
+        background: #EAF1F8;
+        border-radius: 0;
+    }
+
+    .rp__day.is-edge {
+        background: var(--rs-blue);
+        color: var(--rs-white);
+        font-weight: 700;
+    }
+
+    .rp__day.is-start {
+        border-radius: 6px 0 0 6px;
+    }
+
+    .rp__day.is-end {
+        border-radius: 0 6px 6px 0;
+    }
+
+    .rp__day.is-start.is-end {
+        border-radius: 6px;
+    }
+
+@media (max-width: 760px) {
+    .rp {
+        flex-direction: column;
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .rp__month {
+        width: 100%;
+        min-width: 240px;
+    }
+}
